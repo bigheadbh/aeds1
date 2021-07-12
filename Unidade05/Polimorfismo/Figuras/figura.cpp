@@ -1,6 +1,5 @@
-#include <math.h>
+#include<math.h>
 #include "figura.h"
-using namespace std;
 
 Figura::Figura(){
     this->cor = "nenhuma";
@@ -12,10 +11,8 @@ Figura::Figura(string cor, bool preenchida){
     this->preenchida = preenchida;
 }
 
-
 Circulo::Circulo():Figura(){
-    this->cor = "nenhuma";
-    this->preenchida = false;
+    raio = 0;
 }
 
 Circulo::Circulo(float raio, string cor, bool preenchida):Figura(cor, preenchida){
@@ -31,19 +28,18 @@ float Circulo::getRaio(){
 }
 
 float Circulo::getArea(){
-    return M_PI * pow(this->raio, 2);
+    return M_PI * pow(raio,2);
 }
 
 float Circulo::getPerimetro(){
-    return 2 * M_PI * this->raio;
+    return 2 * M_PI * raio;
 }
-
 
 Quadrado::Quadrado():Figura(){
     this->lado = 0;
 }
 
-Quadrado::Quadrado(float lado, string cor, bool preenchida):Figura(cor, preenchida){
+Quadrado::Quadrado(float lado,string cor, bool preenchida):Figura(cor, preenchida){
     this->lado = lado;
 }
 
@@ -56,44 +52,43 @@ float Quadrado::getLado(){
 }
 
 float Quadrado::getArea(){
-    return pow(lado, 2);
+    return lado * lado;
 }
 
 float Quadrado::getPerimetro(){
     return 4 * lado;
 }
 
-
 Retangulo::Retangulo():Figura(){
-    this->base = 0;
     this->altura = 0;
+    this->base = 0;
 }
 
-Retangulo::Retangulo(float base, float altura, string cor, bool preenchida):Figura(cor, preenchida){
-    this->base = base;
+Retangulo::Retangulo(float altura, float base, string cor, bool preenchida):Figura(cor, preenchida){
     this->altura = altura;
+    this->base = base;
 }
 
 void Retangulo::setBase(float base){
     this->base = base;
 }
 
-void Retangulo::setAltura(float altura){
-    this->altura = altura;
-}
-
 float Retangulo::getBase(){
     return this->base;
 }
 
+void Retangulo::setAltura(float altura){
+    this->altura = altura;
+}
+
 float Retangulo::getAltura(){
     return this->altura;
-}
+}   
 
 float Retangulo::getArea(){
     return base * altura;
 }
 
 float Retangulo::getPerimetro(){
-    return 2 * (base + altura);
+    return 2*(base + altura);
 }

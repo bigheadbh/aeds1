@@ -2,8 +2,6 @@
 #define ANIMAIS_H
 
 #include "animal.h"
-#include <iostream>
-using namespace std;
 
 class Vaca:public Animal{
     public:
@@ -17,6 +15,10 @@ class Cachorro:public Animal{
         void emitirSom();
 };
 
-
+class Viralata:public Cachorro{
+    public:
+        Viralata();
+        void emitirSom();
+};
 
 #endif

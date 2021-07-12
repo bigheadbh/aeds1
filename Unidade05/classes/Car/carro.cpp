@@ -5,6 +5,10 @@ Carro::Carro(){
     this->tanque = 0;
 }
 
+Carro::~Carro(){
+    cout<<"Final!!!"<<endl;
+}
+
 Carro::Carro(float tanque, int distancia){
     this->distancia = distancia;
     this->tanque = tanque;
@@ -16,12 +20,13 @@ void Carro::abastecer(float litros){
     }
 }
 
-void Carro::mover(int km){
-    float litros = km/15;
-    this->distancia += km;
+void Carro::mover(int quilometros){
+    float litros = quilometros/15.0;
+    this->distancia += quilometros;
     this->tanque -= litros;
 }
 
 void Carro::getStatus(){
-    cout << "Distância percorrida: " << this->distancia << "km\t" << "Combustível restante no tanque: " << this->tanque << "L" << endl;
+    cout <<"Distancia: "<<this->distancia<<"\t";
+    cout <<"Status do tanque: "<<this->tanque<<endl;
 }

@@ -1,17 +1,24 @@
-#include "animais.h"
+#include"animais.h"
 
-Vaca::Vaca():Animal("vaca"){
+Vaca::Vaca():Animal("Vaca"){
     this->printNome();
 }
 
 void Vaca::emitirSom(){
-    system("say muuuuuuuuuu");
+    cout<<"Múúúúúúú"<<endl;
 }
 
-Cachorro::Cachorro():Animal("cachorro"){
+Cachorro::Cachorro():Animal("Cachorro"){
     this->printNome();
 }
 
 void Cachorro::emitirSom(){
-    system("say auauauauau auau");
+    cout<<"Au au au au"<<endl;
+}
+
+Viralata::Viralata():Cachorro(){
+}
+
+void Viralata::emitirSom(){
+    cout<<"AU AU AU AU"<<endl;
 }

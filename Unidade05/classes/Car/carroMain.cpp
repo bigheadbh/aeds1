@@ -15,5 +15,8 @@ int main(){
     cout << "Carro 2: " << endl;
     c2->getStatus();
 
+    delete c1;
+    delete c2;
+
     return 0;
 }
